@@ -1,5 +1,5 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -27,14 +27,13 @@
               "src/styles.css"             
               
             ],
-            "scripts": [ 
-              "node_modules/jquery-mask-plugin/dist/jquery.mask.min.js",             
+            "scripts": [                     
               "node_modules/bootstrap/dist/js/bootstrap.js",
-              "node_modules/jquery/dist/jquery.min.js",              
-              "src/assets/js/jquery.js",
-              "src/assets/js/script.js"                                     
-
+              "node_modules/jquery/dist/jquery.min.js", 
+              "node_modules/jquery-mask-plugin/dist/jquery.mask.js",             
+              "src/assets/js/script.js"                                  
             ]
+            
           },
           "configurations": {
             "production": {
@@ -106,5 +105,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "407264a1-8a0d-4193-b0ce-afc1108f07e5"
   }
 }

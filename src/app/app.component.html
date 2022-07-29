@@ -1,38 +1,38 @@
 <header>
-    <div class="container header-flex">
-      <a routerLink="home"><img class="logo" src="/assets/img/nintendo.png" alt="logo-site"></a>
-      <p class="marca">+ Tecnologia + Soluções e <br> com Qualidade</p>
-      <div class="login">
-        <a routerLink="cadastro">
-          <p>Faça seu Login <br>ou Cadastre-se</p>
-        </a>
-      </div>
-
-      <div class="icones">
-        <a routerLink="login"><img class="icon" class="icon" src="/assets/img/enter.png" alt="login"></a>
-        <a routerLink=""><img class="icon" src="/assets/img/carrinho-de-compras.png" alt="carrinho"></a>
-      </div>
-
+  <div class="container header-flex">
+    <a routerLink="home"><img class="logo" src="/assets/img/nintendo.png" alt="logo-site"></a>
+    <p class="marca">+ Tecnologia + Soluções e <br> com Qualidade</p>
+    <div class="login">
+      <a routerLink="cadastro">
+        <p>Faça seu Login <br>ou Cadastre-se</p>
+      </a>
     </div>
-    <div class="pesquisa">
-      <div class="barra">
-        <label for="Pesquisa"></label>
-        <input type="nome" class="barra-pesquisa" id="nome" name="nome" maxlength="40" required autocomplete>
-        <a routerLink=""><img class="lupa" src="/assets/img/lupa.png" alt="lupa"></a>
-      </div>
+
+    <div class="icones">
+      <a routerLink="login"><img class="icon" class="icon" src="/assets/img/enter.png" alt="login"></a>
+      <a routerLink=""><img class="icon" src="/assets/img/carrinho-de-compras.png" alt="carrinho"></a>
     </div>
-  </header>
-  <div class="barra-menu">
-    <img onclick="abrirMenu()" class="menu-hamb" src="/assets/img/bars.svg" alt="menu-retratil">
-    <div class="header-menu">
-      <nav class="menu">
-        <a routerLink="/home">home</a>
-        <a routerLink="/hardware">hardware</a>
-        <a routerLink="/software">Software</a>
-        <a routerLink="/perifericos">Perifericos</a>
-        <a routerLink="/celulares">Celulares</a>
-      </nav>
+
+  </div>
+  <div class="pesquisa">
+    <div class="barra">
+      <label for="Pesquisa"></label>
+      <input type="nome" class="barra-pesquisa" id="nome" name="nome" maxlength="40" required autocomplete>
+      <a routerLink=""><img class="lupa" src="/assets/img/lupa.png" alt="lupa"></a>
     </div>
   </div>
-<script src="/assets/js/script.js"></script>
+</header>
+<div class="barra-menu">
+  <img onclick="abrirMenu()" class="menu-hamb" src="/assets/img/bars.svg" alt="menu-retratil">
+  <div class="header-menu">
+    <nav class="menu">
+      <a routerLink="/home">home</a>
+      <a routerLink="/hardware">hardware</a>
+      <a routerLink="/software">Software</a>
+      <a routerLink="/perifericos">Perifericos</a>
+      <a routerLink="/celulares">Celulares</a>
+    </nav>
+  </div>
+</div>
+
 <router-outlet></router-outlet>
