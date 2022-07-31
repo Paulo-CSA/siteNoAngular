@@ -3,24 +3,25 @@
     <main>
         <section class="tela-login">
             <div class="entrar">
-                
+                <form (ngSubmit)="capturarDados()">
                 <img class="avatar" src="/assets/img/user-solid.svg" alt="user">
-                <input type="text" id="login" name="login" maxlength="40" required autocomplete placeholder="Digite seu Nome">
+                <input type="text" id="login" name="login" maxlength="40" required autocomplete placeholder="Digite seu Nome" [(ngModel)]="userModel.nome">
                 <br><br>           
                 <img class="avatar" src="/assets/img/id-card-solid.svg" alt="user">
-                <input type="text" id="cpf" name="cpf" maxlength="40" required autocomplete placeholder="Digite seu CPF">
+                <input type="text" id="cpf" name="cpf" maxlength="40" required autocomplete placeholder="Digite seu CPF" [(ngModel)]="userModel.cpf">
                 <br><br>                
                 <img class="avatar" src="/assets/img/phone-solid.svg" alt="user">
-                <input type="text" id="telefone" name="telefone" maxlength="40" required autocomplete placeholder="Digite seu Telefone">
+                <input type="text" id="telefone" name="telefone" maxlength="40" required autocomplete placeholder="Digite seu Telefone" [(ngModel)]="userModel.telefone">
                 <br><br>                
                 <img class="avatar" src="/assets/img/envelope-solid.svg" alt="user">
-                <input type="text" id="email" name="email" maxlength="40" required autocomplete placeholder="Digite seu E-mail">
+                <input type="text" id="email" name="email" maxlength="40" required autocomplete placeholder="Digite seu E-mail" [(ngModel)]="userModel.email">
                 <br><br>               
                 <img class="avatar" src="/assets/img/key-solid.svg" alt="user">
-                <input type="text" id="senha" name="senha" maxlength="40" required autocomplete placeholder="Digite sua Senha">                
-                <img type="button" class="salvar avatar" src="/assets/img/salvar.png" alt="lupa">
+                <input type="password" id="senha" name="senha" maxlength="40" required autocomplete placeholder="Digite sua Senha" [(ngModel)]="userModel.senha">                
+                <img type="button" (click)="capturarDados()" class="salvar avatar" src="/assets/img/salvar.png" alt="lupa">
                 <br><br>
                 <p class="alertas"> </p>
+              </form>
             </div>
             
         </section>

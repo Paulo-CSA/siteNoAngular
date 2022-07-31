@@ -12,8 +12,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  test() {
-    alert("aqui")
+  buy() {
+    alert("Necessario se cadastrar !")
   }
-
+  
 }
+

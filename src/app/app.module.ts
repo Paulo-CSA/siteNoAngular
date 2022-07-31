@@ -10,6 +10,9 @@ import { HardwareComponent } from './views/hardware/hardware.component';
 import { PerifericosComponent } from './views/perifericos/perifericos.component';
 import { SoftwareComponent } from './views/software/software.component';
 import { CelularesComponent } from './views/celulares/celulares.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { CelularesComponent } from './views/celulares/celulares.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

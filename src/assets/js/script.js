@@ -3,11 +3,11 @@ function abrirMenu() {
     navBar.classList.toggle("mostrarMenu");
 }
 
-jQuery(document).ready(function() {
+/* jQuery(document).ready(function() {
     $(".btn").click(function () {
         alert("Necessario se cadastrar !");            
        });
-});
+}); */
 
 $(function () {
     $(".lupa").click(function () {

@@ -11,5 +11,9 @@ export class HardwareComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  buy() {
+    alert("Necessario se cadastrar !")
+  }
 
 }
