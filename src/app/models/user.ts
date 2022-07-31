@@ -5,8 +5,6 @@ constructor (
     public telefone?: number, 
     public email?: string, 
     public senha?: string 
-){
-
-}
+){}
 
 }

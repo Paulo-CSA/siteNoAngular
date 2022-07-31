@@ -1,24 +1,26 @@
 <body>
-  
-    <section class="tela-login">
-      <div class="entrar">        
+
+  <section class="tela-login">
+    <div class="entrar">
+      <form action="">
         <label for="Login">Login:</label>
         <br>
-        <input type="nome" id="login" name="login" maxlength="40" required autocomplete>
+        <input type="text" id="login" name="login" maxlength="40" required autocomplete [(ngModel)]="loginModel.nome">
         <br><br>
         <label for="Senha">Senha:</label>
         <br>
-        <input type="nome" id="senha" name="senha" maxlength="40" required autocomplete>
-        <img class="lupa" type="button" src="/assets/img/logar.png" alt="lupa">
+        <input type="password" id="senha" name="senha" maxlength="40" required autocomplete [(ngModel)]="loginModel.senha">
+        <img class="lupa" type="button" (click)="capturarDados()" src="/assets/img/logar.png" alt="lupa">
         <br>
-        <p class="alertas"> </p>
-        <a routerLink="/cadastro">Cadastre-se</a>
-        <br>
-        <a routerLink="#">Recuperar Login</a>
-              
-      </div>
-    </section>
- 
+      </form>
+      <p class="alertas"> </p>
+      <a routerLink="/cadastro">Cadastre-se</a>
+      <br>
+      <a routerLink="#">Recuperar Login</a>
+
+    </div>
+  </section>
+
 
 </body>
 
