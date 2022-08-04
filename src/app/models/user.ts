@@ -4,7 +4,7 @@ constructor (
     public cpf?: number, 
     public telefone?: number, 
     public email?: string, 
-    public senha?: string 
+    public password?: string 
 ){}
 
 }

@@ -8,7 +8,7 @@ function abrirMenu() {
         alert("Necessario se cadastrar !");            
        });
 }); */
-
+/* 
 $(function () {
     $(".lupa").click(function () {
         let login = $("#login").val();
@@ -20,8 +20,8 @@ $(function () {
             $(".alertas").text("Verificando credenciais!");
         }
     });
-});
-
+}); */
+/* 
 $(document).ready(function () {
     $("#cpf").mask("000.000.000-00");
     $("#telefone").mask("(00) 00000-0000");
@@ -40,3 +40,4 @@ $(document).ready(function () {
         }
     });
 });
+ */

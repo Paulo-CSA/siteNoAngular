@@ -22,9 +22,9 @@ export class UserService {
   //post
   signin(user: User): Observable<any> {
     return this.httpClient.post(
-      this.url, //url
-      JSON.stringify(user), //body
-      { //options
+      this.url,                //url
+      JSON.stringify(user),    //body
+      {                        //options
         headers: new HttpHeaders({ "Content-Type": "application/json" }),
         observe: 'response'
       }
