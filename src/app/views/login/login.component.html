@@ -5,11 +5,11 @@
       <form action="">
         <label for="Login">Login:</label>
         <br>
-        <input type="text" id="login" name="login" maxlength="40" required autocomplete [(ngModel)]="loginModel.nome">
+        <input type="text" id="login" name="login" maxlength="40" required autocomplete [(ngModel)]="loginModel.email">
         <br><br>
         <label for="Senha">Senha:</label>
         <br>
-        <input type="password" id="senha" name="senha" maxlength="40" required autocomplete [(ngModel)]="loginModel.senha">
+        <input type="password" id="senha" name="senha" maxlength="40" required autocomplete [(ngModel)]="loginModel.password">
         <img class="lupa" type="button" (click)="capturarDados()" src="/assets/img/logar.png" alt="lupa">
         <br>
       </form>

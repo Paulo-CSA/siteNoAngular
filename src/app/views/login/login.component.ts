@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Login } from 'src/app/models/login';
 import * as $ from 'jquery';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/user';
 
 
 @Component({
@@ -12,8 +14,9 @@ import * as $ from 'jquery';
 export class LoginComponent implements OnInit {
 
   loginModel = new Login()
+  userModel = new User()
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   capturarDados() {    
       let login = $("#login").val() || [];
@@ -23,10 +26,15 @@ export class LoginComponent implements OnInit {
         $(".alertas").text("Forneca seus dados!");
       } else {
         $(".alertas").text("Verificando credenciais!");
-      };
-        
+        this.userService.signin(this.loginModel).subscribe(function(response){
+          console.log(response);
+        })
+
+      };              
     console.log(this.loginModel);
+
   }
+
 
   ngOnInit(): void {
 
