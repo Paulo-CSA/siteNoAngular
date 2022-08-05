@@ -13,7 +13,7 @@ export class UserService {
 
   ) { }
 
-  url = "http://localhost:3000/signup"
+  url = "http://localhost:3000/users"
 
   //get
 

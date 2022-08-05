@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import * as $ from 'jquery';
 import 'jquery-mask-plugin';
 import { UserService } from 'src/app/services/user.service';
 import { Login } from 'src/app/models/login';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -16,7 +18,9 @@ export class CadastroComponent implements OnInit {
   loginModel = new Login()
   userModel = new User()
 
-  constructor(private userService: UserService) { }
+
+  constructor(private userService: UserService, private router: Router) { }
+
   myFunction() {
     $(document).ready(function () {
       $("#cpf").mask("000.000.000-00");
@@ -34,16 +38,19 @@ export class CadastroComponent implements OnInit {
 
     if (login == "" || cpf == "" || telefone == "" || email == "" || password == "") {
       $(".alertas").text("Favor preencher todos os campos !");
-
     } else {
       this.userService.signin(this.userModel).subscribe(function (response) {
-        console.log(response);
+        //console.log(response);
+        //$(".alertas").text("Dados Cadastrados!");   
+        alert("Dados Cadastrados com Sucesso!");     
       })
-      $(".alertas").text("Dados Cadastrados!");
-    };
+      this.router.navigate(['login'])
+    }
 
-    console.log(this.userModel);
-  }
+  };
+
+  //console.log(this.userModel);
+
   ngOnInit(): void {
   }
 }
