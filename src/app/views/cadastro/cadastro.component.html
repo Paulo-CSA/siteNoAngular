@@ -20,7 +20,7 @@
                 <input type="password" id="senha" name="senha" maxlength="40" required autocomplete placeholder="Digite sua Senha" [(ngModel)]="userModel.password">                
                 <img type="button" (click)="capturarDados()" class="salvar avatar" src="/assets/img/salvar.png" alt="lupa">
                 <br><br>
-                <p class="alertas"> </p>
+                <p class="alertas">{{mensagem}} </p>
               </form>
             </div>
             

@@ -1,19 +1,19 @@
 {
   "users": [
     {
+      "id": 1,
       "email": "test@gamemania.com",
-      "password": "$2a$10$F9.ML6qIXN8BUOdAGj/2tuNKHMmRwm/ArkOO8/B9MYw.ffui7EdLK",
       "nome": "Teste",
       "cpf": "111.111.111-11",
       "telefone": "(22) 22222-2222",
-      "id": 1
+      "password": "$2a$10$F9.ML6qIXN8BUOdAGj/2tuNKHMmRwm/ArkOO8/B9MYw.ffui7EdLK"
     },
     {
-      "email": "suporte@mania.com",
-      "password": "$2a$10$.SKHUGsMijvrD1CSj0GQ2.iaoUZSlDKrAc3/aLUYsa1ZcOSJyluQ6",
-      "nome": "suporte",
-      "cpf": "125.546.455-45",
-      "telefone": "(64) 55641-5456",
+      "email": "teste@teste.com",
+      "password": "$2a$10$ipxrmw4RuKRBDsioGwXKF.I8iUQUkcpu3FFRxR13uXMxkkq0ow/cS",
+      "nome": "Teste",
+      "cpf": "111.111.111-11",
+      "telefone": "(22) 22222-2222",
       "id": 2
     }
   ]

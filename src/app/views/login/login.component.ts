@@ -3,6 +3,7 @@ import { Login } from 'src/app/models/login';
 import * as $ from 'jquery';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
+import { ThisReceiver } from '@angular/compiler';
 
 
 @Component({
@@ -15,25 +16,35 @@ export class LoginComponent implements OnInit {
 
   loginModel = new Login()
   userModel = new User()
+  mensagem: string = ""
 
   constructor(private userService: UserService) { }
 
-  capturarDados() {
-    let login = $("#login").val() || [];
-    let senha = $("#senha").val() || [];
-
-    if (login == "" || senha == "") {
-      $(".alertas").text("Forneca seus dados!");
-    } else if (login == this.loginModel.email && senha == this.loginModel.password) {
-      $(".alertas").text("Verificando credenciais!");
-      this.userService.signin(this.loginModel).subscribe(function (response) {
-        console.log(response);
-      })
+  validacao(): boolean {
+    if (this.loginModel.email === undefined || this.loginModel.email === '' || this.loginModel.password === undefined || this.loginModel.password === '') {
+      return false
     } else {
-      $(".alertas").text("Login ou Senha Invalido !!");
+      return true
     }
-    console.log(this.loginModel);
+
   }
+  capturarDados() {
+    if (this.validacao() == false) {
+      this.mensagem = `Forneca seus dados!`;
+    } else {
+      (this.userService.signin(this.loginModel)
+        .subscribe(
+          {
+            next: (response) => {
+              console.log(response);
+              this.mensagem = `Logado com Sucesso!`
+            },
+            error: (e) => { this.mensagem = `Login ou Senha Invalido!` }//${e.error}
+          }
+        ))
+    }
+  }
+
   ngOnInit(): void {
 
   }

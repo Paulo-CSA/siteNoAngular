@@ -14,15 +14,27 @@ export class UserService {
   ) { }
 
   url = "http://localhost:3000/users"
+  url1 = "http://localhost:3000/signin"
 
   //get
 
   //delete
 
   //post
-  signin(user: User): Observable<any> {
+  cadastro(user: User): Observable<any> {
     return this.httpClient.post(
       this.url,                //url
+      JSON.stringify(user),    //body
+      {                        //options
+        headers: new HttpHeaders({ "Content-Type": "application/json" }),
+        observe: 'response'
+      }
+    )
+
+  }
+  signin(user: User): Observable<any> {
+    return this.httpClient.post(
+      this.url1,                //url
       JSON.stringify(user),    //body
       {                        //options
         headers: new HttpHeaders({ "Content-Type": "application/json" }),
