@@ -4,6 +4,8 @@ import * as $ from 'jquery';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
 import { ThisReceiver } from '@angular/compiler';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -18,9 +20,23 @@ export class LoginComponent implements OnInit {
   userModel = new User()
   mensagem: string = ""
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   validacao(): boolean {
+    let blackList = ["SELECT", "OR", "--", ", ", "; ", "DROP", "1=1", "'='"];
+
+    let ataque = 0;
+
+    blackList.forEach((palavra) => {
+      if (this.loginModel.email?.toUpperCase().includes(palavra)) {
+        ataque++;        
+      }
+    })
+
+    if (ataque > 0) {
+      return false;
+    }
+
     if (this.loginModel.email === undefined || this.loginModel.email === '' || this.loginModel.password === undefined || this.loginModel.password === '') {
       return false
     } else {
@@ -28,16 +44,19 @@ export class LoginComponent implements OnInit {
     }
 
   }
+
   capturarDados() {
     if (this.validacao() == false) {
-      this.mensagem = `Forneca seus dados!`;
+      this.mensagem = `Formato invalido para login!`;
     } else {
       (this.userService.signin(this.loginModel)
         .subscribe(
           {
             next: (response) => {
-              console.log(response);
-              this.mensagem = `Logado com Sucesso!`
+              //console.log(response);
+              //this.mensagem = `Logado com Sucesso!`
+              this.router.navigate([''])
+
             },
             error: (e) => { this.mensagem = `Login ou Senha Invalido!` }//${e.error}
           }
@@ -48,6 +67,4 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
-
 }
